@@ -107,8 +107,8 @@ function Pizza(props){
 
 
 function Footer(){
-
-
+  const date = new Date().toLocaleTimeString();
+  return <footer className='footer'>{date }:current time</footer>
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
