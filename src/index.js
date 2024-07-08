@@ -60,6 +60,7 @@ function App() {
       <Header/>
       <Menu/>
       <Footer/>
+      <BTN/>
       </div>
       
   );
@@ -91,20 +92,25 @@ function Menu(){
   )
 }
 function Pizza(props){
+ 
   return(
-    <li className='pizza'>
+    <li className={`pizza ${props.pizzaobj.soldOut ? "sold-out":""}`}>
       <img src={props.pizzaobj.photoName} alt={props.pizzaobj.name}/>
       <div>
 
       <h1>{props.pizzaobj.name}</h1>
       <h2>{props.pizzaobj.ingredients}</h2>
+      <span>{props.pizzaobj.price}</span>
+      <span>{props.pizzaobj.soldOut}</span>
       </div>
 
     </li>
 
 )  
 }
-
+function BTN(){
+  return <button className='btn'>ORDER NOW</button>
+}
 
 function Footer(){
   const date = new Date().toLocaleTimeString();
